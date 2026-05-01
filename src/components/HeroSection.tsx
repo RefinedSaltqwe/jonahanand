@@ -42,9 +42,9 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl pb-32 sm:pb-48 lg:pb-56 mb-[250px]">
+        <div className="mx-auto max-w-xl pb-32 sm:pb-48 lg:pb-56 mb-[250px]">
           <div className="text-center">
-            <p className="mt-6 text-3xl leading-8 text-gray-300 mb-5">
+            <p className="mt-6 text-xl leading-8 text-gray-300 mb-3 md:mb-7 md:text-3xl">
               You are invited!
             </p>
             <h1
@@ -52,7 +52,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
             >
               Jonah & Anand
             </h1>
-            <p className="mt-8 text-3xl leading-8 text-gray-300">
+            <p className="mt-1 md:mt-5 text-xl leading-8 text-gray-300 md:text-3xl">
               Are tying the knot!
             </p>
             {/* <div className="mt-10 flex items-center justify-center gap-x-6">
