@@ -58,6 +58,11 @@ const RSVP = () => {
   /* 👇 TOTAL INVITED NOW COMES FROM people.js */
   const totalInvited = people.length;
 
+  const totalInvitedIncludingGuests = people.reduce(
+    (sum, person) => sum + person.numberOfGuests,
+    0,
+  );
+
   const yesCount = data.filter((x) => x.answer === "Yes").length;
   const noCount = data.filter((x) => x.answer === "No").length;
 
@@ -108,6 +113,10 @@ const RSVP = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <StatCard title="Total Invited" value={totalInvited} />
+          <StatCard
+            title="Total # of Guests"
+            value={totalInvitedIncludingGuests}
+          />
           <StatCard title="Accepted" value={yesCount} accent="green" />
           <StatCard title="Declined" value={noCount} accent="red" />
           <StatCard title="Guests Coming" value={totalGuests} accent="blue" />
