@@ -465,7 +465,7 @@ const Rsvp: React.FC<RsvpProps> = () => {
                               aria-describedby="I-have-read"
                               name="comments"
                               type="checkbox"
-                              className="h-4 w-4 rounded border-gray-300 text-[#b8860b] focus:ring-[#b8860b]"
+                              className="h-5 w-5 rounded border-gray-300 text-[#b8860b] focus:ring-[#b8860b]"
                               onChange={handleRead}
                             />
                           </div>

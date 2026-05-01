@@ -4,6 +4,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { initializeApp, getApps } from "firebase/app";
 import people from "../../data/people"; // local invited list :contentReference[oaicite:0]{index=0}
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 /* Firebase Config */
 const firebaseConfig = {
@@ -100,6 +102,65 @@ const RSVP = () => {
       ...prev,
       [id]: !prev[id],
     }));
+  };
+
+  const generatePDF = () => {
+    const doc = new jsPDF("p", "mm", "a4");
+
+    /* Header */
+    doc.setFontSize(20);
+    doc.text("Wedding RSVP Dashboard", 14, 18);
+
+    doc.setFontSize(10);
+    doc.setTextColor(120);
+    doc.text(`Generated: ${new Date().toLocaleString()}`, 14, 24);
+
+    /* Summary Cards */
+    doc.setFontSize(12);
+    doc.setTextColor(0);
+
+    doc.text(`Total Invited: ${totalInvited}`, 14, 34);
+    doc.text(`Total # of Guests: ${totalGuestsInvited}`, 70, 34);
+    doc.text(`Accepted: ${accepted}`, 14, 41);
+    doc.text(`Declined: ${declined}`, 70, 41);
+    doc.text(`Guests Coming: ${guestsComing}`, 130, 41);
+
+    /* Table Data */
+    const rows: any[] = [];
+
+    filteredData.forEach((guest) => {
+      const companions =
+        guest.guests?.filter(
+          (person) =>
+            person.trim().toLowerCase() !== guest.name.trim().toLowerCase(),
+        ) || [];
+
+      rows.push([
+        guest.seatNumber ?? "-",
+        guest.name,
+        guest.answer,
+        guest.numberOfActualGuests ?? 1,
+        companions.join(", "),
+      ]);
+    });
+
+    autoTable(doc, {
+      startY: 50,
+      head: [["Seat", "Guest Name", "Response", "Party Size", "Companions"]],
+      body: rows,
+      styles: {
+        fontSize: 9,
+        cellPadding: 3,
+      },
+      headStyles: {
+        fillColor: [30, 30, 30],
+      },
+      alternateRowStyles: {
+        fillColor: [248, 248, 248],
+      },
+    });
+
+    doc.save("Wedding-RSVP-Report.pdf");
   };
 
   if (loading) {
@@ -202,7 +263,9 @@ const RSVP = () => {
                         hasCompanions ? "hover:bg-gray-50 cursor-pointer" : ""
                       }`}
                     >
-                      <td className="p-4">{guest.seatNumber ?? "-"}</td>
+                      <td className="p-4">
+                        {guest.seatNumber! > 0 ? guest.seatNumber : "-"}
+                      </td>
 
                       <td className="p-4 font-medium">{guest.name}</td>
 
@@ -249,6 +312,14 @@ const RSVP = () => {
             </tbody>
           </table>
         </div>
+      </div>
+      <div className="flex flex-1 items-center align-middle px-6 pb-2 justify-center">
+        <button
+          onClick={generatePDF}
+          className="px-5 py-3 rounded-xl bg-gray-900 text-white hover:bg-black transition "
+        >
+          Export PDF
+        </button>
       </div>
     </div>
   );
