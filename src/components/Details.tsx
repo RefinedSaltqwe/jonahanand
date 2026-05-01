@@ -11,23 +11,23 @@ type DetailsProps = {};
 const features = [
   {
     name: "When",
-    description: "Friday, 4th of August 2023",
+    description: "Thursday, 28th of May 2026",
     icon: CalendarDaysIcon,
   },
   {
     name: "Time",
-    description: "1 o'clock in the afternoon.",
+    description: "2 o'clock in the afternoon.",
     icon: ClockIcon,
   },
   {
     name: "Where",
-    description: "Cove Garden Resort",
+    description: "Valley Prime Resort",
     icon: MapPinIcon,
   },
   {
     name: "Dress code",
     description:
-      "The dress code for our wedding is formal or smart-casual and in shades of blue and grey. Please do not wear navy/midnight blue and white. We would highly appreciate it if guests adhere to the dress code. Thank you.",
+      "Visitors are requested to wear appropriate attire. Sanods, shorts, t-shirts, denims and flip-flops are prohibited.",
     icon: CheckCircleIcon,
   },
 ];
@@ -57,13 +57,13 @@ const Details: React.FC<DetailsProps> = () => {
                     <>
                       <br />
                       <p className="font-semibold">
-                        Church: San Antonio de Padua Parish
+                        Church: Santo Niño Parish Church
                       </p>
                     </>
                   )}
                   {feature.name === "Where" && (
                     <>
-                      {"12th St. Nazareth Cagayan de Oro City"}
+                      {"Baroy, Lanao del Norte, Philippines"}
                       <br />
                     </>
                   )}
@@ -74,7 +74,7 @@ const Details: React.FC<DetailsProps> = () => {
                     feature.description
                   )}
                   {feature.name === "Where" &&
-                    "Zone 3 Old Road, Cagayan de Oro, 9000 Misamis Oriental, Philippines"}
+                    "Baroy, Lanao del Norte, Philippines"}
                 </dd>
               </div>
             ))}

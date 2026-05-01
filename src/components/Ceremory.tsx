@@ -8,7 +8,7 @@ const Ceremony: React.FC<CeremonyProps> = () => {
     <div className="bg-gray-900">
       <div className="relative isolate overflow-hidden pt-14">
         <Image
-          src="/assets/images/sanantoniodepaduaparish.jpg"
+          src="/assets/images/ceremony.jpg"
           className="absolute inset-0 -z-10 h-full w-full object-cover opacity-30"
           alt="Picture of the author"
           width={2000}
@@ -34,10 +34,10 @@ const Ceremony: React.FC<CeremonyProps> = () => {
             <h1
               className={`text-5xl font-bold tracking-tight text-white sm:text-[100px]`}
             >
-              {`San Antonio de Padua Parish`}
+              {`Santo Niño Parish Church`}
             </h1>
             <p className="mt-11 text-xl leading-2 text-gray-300 p-8">
-              12th St. Nazareth Cagayan de Oro City
+              Baroy, Lanao del Norte, Philippines
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
