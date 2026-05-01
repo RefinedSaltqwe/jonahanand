@@ -3,9 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { initializeApp, getApps } from "firebase/app";
-
-/* 👇 IMPORT YOUR LOCAL PEOPLE DATA */
-import people from "../../data/people";
+import people from "../../data/people"; // local invited list :contentReference[oaicite:0]{index=0}
 
 /* Firebase Config */
 const firebaseConfig = {
@@ -17,11 +15,12 @@ const firebaseConfig = {
 const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+/* Types */
 type RSVPItem = {
   id: string;
   name: string;
   answer: "Yes" | "No" | string;
-  guests?: string[];
+  guests?: string[]; // firestore includes main guest as first item
   numberOfActualGuests?: number;
   seatNumber?: number;
 };
@@ -33,6 +32,8 @@ const RSVP = () => {
   const [tab, setTab] = useState<"all" | "yes" | "no">("all");
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState<"name" | "seat">("name");
+
+  const [openRows, setOpenRows] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,20 +56,23 @@ const RSVP = () => {
     fetchData();
   }, []);
 
-  /* 👇 TOTAL INVITED NOW COMES FROM people.js */
+  /* Dashboard Stats */
+
+  // invitations / households
   const totalInvited = people.length;
 
-  const totalInvitedIncludingGuests = people.reduce(
+  // seats invited including companions
+  const totalGuestsInvited = people.reduce(
     (sum, person) => sum + person.numberOfGuests,
     0,
   );
 
-  const yesCount = data.filter((x) => x.answer === "Yes").length;
-  const noCount = data.filter((x) => x.answer === "No").length;
+  const accepted = data.filter((x) => x.answer === "Yes").length;
+  const declined = data.filter((x) => x.answer === "No").length;
 
-  const totalGuests = data
+  const guestsComing = data
     .filter((x) => x.answer === "Yes")
-    .reduce((sum, item) => sum + (item.numberOfActualGuests ?? 1), 0);
+    .reduce((sum, person) => sum + (person.numberOfActualGuests ?? 1), 0);
 
   const filteredData = useMemo(() => {
     let list = [...data];
@@ -91,6 +95,13 @@ const RSVP = () => {
     return list;
   }, [data, tab, search, sortBy]);
 
+  const toggleRow = (id: string) => {
+    setOpenRows((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center text-gray-500">
@@ -111,15 +122,12 @@ const RSVP = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           <StatCard title="Total Invited" value={totalInvited} />
-          <StatCard
-            title="Total # of Guests"
-            value={totalInvitedIncludingGuests}
-          />
-          <StatCard title="Accepted" value={yesCount} accent="green" />
-          <StatCard title="Declined" value={noCount} accent="red" />
-          <StatCard title="Guests Coming" value={totalGuests} accent="blue" />
+          <StatCard title="Total # of Guests" value={totalGuestsInvited} />
+          <StatCard title="Accepted" value={accepted} accent="green" />
+          <StatCard title="Declined" value={declined} accent="red" />
+          <StatCard title="Guests Coming" value={guestsComing} accent="blue" />
         </div>
 
         {/* Controls */}
@@ -150,12 +158,12 @@ const RSVP = () => {
             onClick={() => setTab("all")}
           />
           <TabButton
-            label={`Accepted (${yesCount})`}
+            label={`Accepted (${accepted})`}
             active={tab === "yes"}
             onClick={() => setTab("yes")}
           />
           <TabButton
-            label={`Declined (${noCount})`}
+            label={`Declined (${declined})`}
             active={tab === "no"}
             onClick={() => setTab("no")}
           />
@@ -174,27 +182,70 @@ const RSVP = () => {
             </thead>
 
             <tbody>
-              {filteredData.map((guest) => (
-                <tr
-                  key={guest.id}
-                  className="border-t border-gray-100 hover:bg-gray-50"
-                >
-                  <td className="p-4">{guest.seatNumber ?? "-"}</td>
-                  <td className="p-4 font-medium">{guest.name}</td>
-                  <td className="p-4">
-                    {guest.answer === "Yes" ? (
-                      <span className="px-3 py-1 rounded-full text-sm bg-green-50 text-green-700">
-                        Accepted
-                      </span>
-                    ) : (
-                      <span className="px-3 py-1 rounded-full text-sm bg-red-50 text-red-700">
-                        Declined
-                      </span>
+              {filteredData.map((guest) => {
+                const companionList =
+                  guest.guests?.filter(
+                    (person) =>
+                      person.trim().toLowerCase() !==
+                      guest.name.trim().toLowerCase(),
+                  ) || [];
+
+                const hasCompanions = companionList.length > 0;
+                const isOpen = openRows[guest.id];
+
+                return (
+                  <React.Fragment key={guest.id}>
+                    {/* Main Row */}
+                    <tr
+                      onClick={() => hasCompanions && toggleRow(guest.id)}
+                      className={`border-t border-gray-100 ${
+                        hasCompanions ? "hover:bg-gray-50 cursor-pointer" : ""
+                      }`}
+                    >
+                      <td className="p-4">{guest.seatNumber ?? "-"}</td>
+
+                      <td className="p-4 font-medium">{guest.name}</td>
+
+                      <td className="p-4">
+                        {guest.answer === "Yes" ? (
+                          <span className="px-3 py-1 rounded-full text-sm bg-green-50 text-green-700">
+                            Accepted
+                          </span>
+                        ) : (
+                          <span className="px-3 py-1 rounded-full text-sm bg-red-50 text-red-700">
+                            Declined
+                          </span>
+                        )}
+                      </td>
+
+                      <td className="p-4">{guest.numberOfActualGuests ?? 1}</td>
+                    </tr>
+
+                    {/* Expandable Companion Rows */}
+                    {hasCompanions && isOpen && (
+                      <tr className="bg-gray-100 border-t border-gray-100">
+                        <td colSpan={4} className="p-4">
+                          <p className="text-sm font-medium text-gray-600 mb-2">
+                            {guest.numberOfActualGuests! > 2
+                              ? "Companions"
+                              : "Companion"}
+                          </p>
+                          <div className="space-y-2">
+                            {companionList.map((person, index) => (
+                              <div
+                                key={index}
+                                className="bg-white border border-gray-200 rounded-lg px-4 py-2 text-sm"
+                              >
+                                {person}
+                              </div>
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
                     )}
-                  </td>
-                  <td className="p-4">{guest.numberOfActualGuests ?? 1}</td>
-                </tr>
-              ))}
+                  </React.Fragment>
+                );
+              })}
             </tbody>
           </table>
         </div>
