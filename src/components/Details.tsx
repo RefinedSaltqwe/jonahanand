@@ -25,7 +25,7 @@ const features = [
     icon: MapPinIcon,
   },
   {
-    name: "Dress code",
+    name: "Dress Code",
     description:
       "Visitors are requested to wear appropriate attire. Sandos, shorts, t-shirts, denims and flip-flops are prohibited.",
     icon: CheckCircleIcon,
