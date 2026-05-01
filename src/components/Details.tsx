@@ -27,7 +27,7 @@ const features = [
   {
     name: "Dress code",
     description:
-      "Visitors are requested to wear appropriate attire. Sanods, shorts, t-shirts, denims and flip-flops are prohibited.",
+      "Visitors are requested to wear appropriate attire. Sandos, shorts, t-shirts, denims and flip-flops are prohibited.",
     icon: CheckCircleIcon,
   },
 ];
