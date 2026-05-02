@@ -146,7 +146,7 @@ const RSVP = () => {
 
     autoTable(doc, {
       startY: 50,
-      head: [["Seat", "Guest Name", "Response", "Party Size", "Companions"]],
+      head: [["Table", "Guest Name", "Response", "Party Size", "Companions"]],
       body: rows,
       styles: {
         fontSize: 9,
