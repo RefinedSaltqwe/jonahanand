@@ -59,8 +59,9 @@ export default function InvitationsPage() {
 
     ${message}
 
-    Link: https://rsvp.jonahanand.com/
-    Invitation Code: ${person.code}
+    Code: ${person.code}
+    
+    Link: https://jonahanand.vercel.app/
     
     We truly hope you can join us in this joyful celebration.
 
