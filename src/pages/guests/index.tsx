@@ -54,19 +54,17 @@ export default function InvitationsPage() {
   }
 
   async function copyInvite(person: Person) {
-    const text = `
-    Dear ${person.name},
+    const text = `Dear ${person.name},
 
-    ${message}
+${message}
+Code: ${person.code}
 
-    Code: ${person.code}
+Link: https://jonahanand.vercel.app/
     
-    Link: https://jonahanand.vercel.app/
-    
-    We truly hope you can join us in this joyful celebration.
+We truly hope you can join us in this joyful celebration.
 
-    With love,
-    Jonah & Anand`;
+With love,
+Jonah & Anand`;
 
     await navigator.clipboard.writeText(text);
 
