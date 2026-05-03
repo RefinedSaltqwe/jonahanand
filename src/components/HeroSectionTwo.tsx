@@ -1,6 +1,10 @@
+import { Cookie } from "next/font/google";
 import Image from "next/image";
 import React from "react";
-
+const AB = Cookie({
+  subsets: ["latin"],
+  weight: "400",
+});
 const HeroSectionTwo: React.FC = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -25,13 +29,15 @@ const HeroSectionTwo: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 flex h-full items-start justify-center px-6 pt-14 md:items-center md:justify-end md:px-14 lg:px-20">
         <div className="max-w-xl text-center md:text-right">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#b8860b]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-[#b8860b]">
             Save The Date
           </p>
 
-          <h1 className="text-4xl font-light leading-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
-            We Hope You Can Be Part Of Our
-            <span className="mt-2 text-2xl md:text-5xl block font-semibold text-[#b8860b]">
+          <h1 className="text-xl font-normal leading-tight text-gray-900 sm:text-4xl">
+            We hope you can be part of our
+            <span
+              className={`mt-2 text-5xl sm:text-7xl block font-semibold text-[#b8860b] ${AB.className}`}
+            >
               Wedding Celebration
             </span>
           </h1>
