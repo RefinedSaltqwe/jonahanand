@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { initializeApp, getApps } from "firebase/app";
-import people from "../../data/people-belle"; // local invited list :contentReference[oaicite:0]{index=0}
+import people from "../../data/people"; // local invited list :contentReference[oaicite:0]{index=0}
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 

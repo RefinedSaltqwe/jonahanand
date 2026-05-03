@@ -63,7 +63,7 @@ export default function InvitationsPage() {
     Invitation Code: ${person.code}
     
     We truly hope you can join us in this joyful celebration.
-    
+
     With love,
     Jonah & Anand`;
 
@@ -112,7 +112,7 @@ export default function InvitationsPage() {
             />
           </div>
 
-          <div className="mt-4 flex gap-3">
+          <div className="mt-4 flex gap-3 md:flex-row flex-col">
             <button
               onClick={saveMessage}
               disabled={saving}
