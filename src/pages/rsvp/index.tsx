@@ -179,7 +179,7 @@ const RSVP = () => {
             href="https://jonahanand.vercel.app/guests"
             className="rounded-xl bg-gray-900 px-5 py-3 text-white transition hover:bg-black"
           >
-            {` Guests Dashboard`}
+            {`Go to Guests Dashboard`}
           </Link>
         </div>
         {/* Header */}

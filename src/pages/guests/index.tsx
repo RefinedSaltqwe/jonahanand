@@ -94,7 +94,7 @@ Jonah & Anand`;
             href="https://jonahanand.vercel.app/rsvp"
             className="rounded-xl bg-gray-900 px-5 py-3 text-white transition hover:bg-black"
           >
-            {` RSVP Dashboard`}
+            {`Go to RSVP Dashboard`}
           </Link>
         </div>
         {/* HEADER */}
