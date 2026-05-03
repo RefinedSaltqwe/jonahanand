@@ -54,10 +54,18 @@ export default function InvitationsPage() {
   }
 
   async function copyInvite(person: Person) {
-    const text = `${message}
+    const text = `
+    Dear ${person.name},
+
+    ${message}
+
     Link: https://rsvp.jonahanand.com/
-    Name: ${person.name}
-    Invitation Code: ${person.code}`;
+    Invitation Code: ${person.code}
+    
+    We truly hope you can join us in this joyful celebration.
+    
+    With love,
+    Jonah & Anand`;
 
     await navigator.clipboard.writeText(text);
 
