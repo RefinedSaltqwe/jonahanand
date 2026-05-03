@@ -320,7 +320,7 @@ const Rsvp: React.FC<RsvpProps> = () => {
                         </div>
                         {error &&
                           error ===
-                            "You have reached the maximun number of guests." && (
+                            "You have reached the maximun number of seats." && (
                             <div className="rounded-md bg-red-50 p-4 mt-2">
                               <div className="flex">
                                 <div className="flex-shrink-0">
