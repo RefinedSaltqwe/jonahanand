@@ -6,7 +6,7 @@ const HeroSectionTwo: React.FC = () => {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/assets/images/hero-2.jpg"
+        src="/assets/images/hero-3.jpg"
         alt="Wedding Couple"
         fill
         priority
@@ -31,7 +31,7 @@ const HeroSectionTwo: React.FC = () => {
 
           <h1 className="text-4xl font-light leading-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
             We Hope You Can Be Part Of Our
-            <span className="mt-2 block font-semibold text-[#b8860b]">
+            <span className="mt-2 text-2xl md:text-5xl block font-semibold text-[#b8860b]">
               Wedding Celebration
             </span>
           </h1>
