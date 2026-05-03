@@ -5,7 +5,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "763",
-    status: "LUIS APARTE FAMILY",
+    status: "GROOM",
   },
   {
     id: 2,
@@ -440,7 +440,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 4,
     code: "411",
-    status: "PETER ACUNO FAMILY",
+    status: "BRIDE",
   },
 
   {
