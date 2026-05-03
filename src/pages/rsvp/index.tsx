@@ -6,7 +6,7 @@ import { initializeApp, getApps } from "firebase/app";
 import people from "../../data/people"; // local invited list :contentReference[oaicite:0]{index=0}
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
-
+import Link from "next/link";
 /* Firebase Config */
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -174,6 +174,14 @@ const RSVP = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <div className="max-w-7xl mx-auto px-6 py-10 space-y-8">
+        <div className="flex flex-1 items-center justify-center px-6 pb-2">
+          <Link
+            href="https://jonahanand.vercel.app/guests"
+            className="rounded-xl bg-gray-900 px-5 py-3 text-white transition hover:bg-black"
+          >
+            {` Guests Dashboard`}
+          </Link>
+        </div>
         {/* Header */}
         <div>
           <p className="text-sm uppercase tracking-[0.2em] text-gray-400">

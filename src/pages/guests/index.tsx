@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import people from "@/data/people"; // your people array
 import { firestore } from "@/firebase/clientApp";
+import Link from "next/link";
 
 type Person = {
   id: number;
@@ -88,6 +89,14 @@ Jonah & Anand`;
   return (
     <main className="min-h-screen bg-gray-100 p-6">
       <div className="mx-auto max-w-7xl space-y-6">
+        <div className="flex flex-1 items-center justify-center px-6 pb-2">
+          <Link
+            href="https://jonahanand.vercel.app/rsvp"
+            className="rounded-xl bg-gray-900 px-5 py-3 text-white transition hover:bg-black"
+          >
+            {` RSVP Dashboard`}
+          </Link>
+        </div>
         {/* HEADER */}
         <div className="rounded-2xl bg-white p-6 shadow-sm">
           <h1 className="text-2xl font-bold text-black">
