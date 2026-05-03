@@ -310,7 +310,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "777",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 39,
@@ -318,7 +318,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 2,
     code: "410",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 40,
@@ -326,7 +326,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 2,
     code: "602",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 41,
@@ -334,7 +334,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "159",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 42,
@@ -342,7 +342,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "843",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 43,
@@ -350,7 +350,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 2,
     code: "366",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 44,
@@ -358,7 +358,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "955",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 45,
@@ -366,7 +366,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "238",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 46,
@@ -374,7 +374,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "681",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 47,
@@ -382,7 +382,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "504",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 48,
@@ -390,7 +390,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "320",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 49,
@@ -398,7 +398,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "147",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
 
   {
@@ -962,7 +962,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "803",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 119,
@@ -970,7 +970,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "417",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 120,
@@ -978,7 +978,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "624",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 121,
@@ -986,7 +986,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "951",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 122,
@@ -994,7 +994,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "286",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 123,
@@ -1002,7 +1002,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 2,
     code: "748",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
   {
     id: 124,
@@ -1010,7 +1010,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "539",
-    status: "FRIENDS",
+    status: "FRIEND",
   },
 ];
 
