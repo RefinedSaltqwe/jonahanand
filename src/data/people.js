@@ -106,9 +106,9 @@ const people = [
   },
   {
     id: 14,
-    name: "JOPETER RV. B. GERONA",
+    name: "JOPETER REV B. GERONA",
     seatNumber: 0,
-    numberOfGuests: 5,
+    numberOfGuests: 6,
     code: "462",
     status: "PRINCIPAL SPONSOR",
   },
@@ -255,7 +255,7 @@ const people = [
   },
   {
     id: 32,
-    name: "VICTOR TSING",
+    name: "VICTOR TUSING",
     seatNumber: 0,
     numberOfGuests: 1,
     code: "384",
