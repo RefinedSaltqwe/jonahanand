@@ -260,7 +260,7 @@ const Rsvp: React.FC<RsvpProps> = () => {
                           htmlFor="email"
                           className={`block text-sm font-medium leading-6 text-gray-900 mt-6`}
                         >
-                          {`Name of companion you're bringing`}
+                          {`Add guest name`}
                         </label>
                         <div className="mt-2 flex rounded-md shadow-sm">
                           <div className="relative flex flex-grow items-stretch focus-within:z-10">
@@ -277,7 +277,7 @@ const Rsvp: React.FC<RsvpProps> = () => {
                               // aria-invalid="true"
                               value={addGuest}
                               className={`${error ? "text-red-500 ring-red-300" : "text-gray-900 ring-gray-300"} ring-1 ring-inset block w-full rounded-none rounded-l-md border-0 py-1.5 pl-10 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#b8860b] sm:text-sm sm:leading-6`}
-                              placeholder="Companion's Full Name"
+                              placeholder="Enter guest name"
                               onChange={(event) => {
                                 setAddGuest(event.target.value);
                                 if (event.target.value.length === 0) {
@@ -304,7 +304,7 @@ const Rsvp: React.FC<RsvpProps> = () => {
                                   setAddGuest("");
                                 } else {
                                   setError(
-                                    "You have reached the maximun number of guests.",
+                                    "You have reached the maximum number of seats.",
                                   );
                                   setTimeout(() => {
                                     setError("");
@@ -320,7 +320,7 @@ const Rsvp: React.FC<RsvpProps> = () => {
                         </div>
                         {error &&
                           error ===
-                            "You have reached the maximun number of seats." && (
+                            "You have reached the maximum number of seats." && (
                             <div className="rounded-md bg-red-50 p-4 mt-2">
                               <div className="flex">
                                 <div className="flex-shrink-0">
@@ -339,7 +339,7 @@ const Rsvp: React.FC<RsvpProps> = () => {
                           )}
                         {guests && (
                           <div className="mt-3">
-                            <span className="text-black">{`[${guests?.length}/${selectedPerson?.numberOfGuests}]`}</span>
+                            <span className="text-black text-sm font-semibold leading-6">{`Seats filled: ${guests?.length}/${selectedPerson?.numberOfGuests}`}</span>
                             <ul
                               role="list"
                               className="divide-y divide-gray-100"
