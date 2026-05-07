@@ -280,9 +280,7 @@ const Rsvp: React.FC<RsvpProps> = () => {
                               placeholder="Enter guest name"
                               onChange={(event) => {
                                 setAddGuest(event.target.value);
-                                if (event.target.value.length === 0) {
-                                  setError("");
-                                }
+                                setError("");
                               }}
                             />
                           </div>
@@ -291,6 +289,10 @@ const Rsvp: React.FC<RsvpProps> = () => {
                               if (selectedPerson?.numberOfGuests) {
                                 let guestLen = guests?.length;
                                 if (guestLen < selectedPerson?.numberOfGuests) {
+                                  if (addGuest === "")
+                                    return setError(
+                                      "Guest name cannot be empty.",
+                                    );
                                   setGuests(
                                     (prev) =>
                                       [
@@ -319,8 +321,9 @@ const Rsvp: React.FC<RsvpProps> = () => {
                           </button>
                         </div>
                         {error &&
-                          error ===
-                            "You have reached the maximum number of seats." && (
+                          (error ===
+                            "You have reached the maximum number of seats." ||
+                            error === "Guest name cannot be empty.") && (
                             <div className="rounded-md bg-red-50 p-4 mt-2">
                               <div className="flex">
                                 <div className="flex-shrink-0">
