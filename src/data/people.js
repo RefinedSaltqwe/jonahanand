@@ -1014,7 +1014,7 @@ const people = [
   },
   {
     id: 125,
-    name: "Charlito Ranile",
+    name: "CHARLITO RANILE",
     seatNumber: 0,
     numberOfGuests: 1,
     code: "409",
