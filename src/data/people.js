@@ -324,7 +324,7 @@ const people = [
     id: 40,
     name: "JOEL REYES",
     seatNumber: 0,
-    numberOfGuests: 2,
+    numberOfGuests: 3,
     code: "602",
     status: "FRIEND",
   },
@@ -1011,6 +1011,14 @@ const people = [
     numberOfGuests: 1,
     code: "539",
     status: "FRIEND",
+  },
+  {
+    id: 125,
+    name: "Charlito Ranile",
+    seatNumber: 0,
+    numberOfGuests: 1,
+    code: "409",
+    status: "LUIS APARTE FAMILY",
   },
 ];
 
