@@ -310,7 +310,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "777",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 39,
@@ -318,7 +318,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 2,
     code: "410",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 40,
@@ -326,7 +326,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 3,
     code: "602",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 41,
@@ -334,7 +334,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "159",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 42,
@@ -342,7 +342,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "843",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 43,
@@ -350,7 +350,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 2,
     code: "366",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 44,
@@ -358,7 +358,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "955",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 45,
@@ -366,7 +366,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "238",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 46,
@@ -374,7 +374,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "681",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 47,
@@ -382,7 +382,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "504",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 48,
@@ -390,7 +390,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "320",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 49,
@@ -398,7 +398,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "147",
-    status: "FRIEND",
+    status: "GUEST",
   },
 
   {
@@ -962,7 +962,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "803",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 119,
@@ -970,7 +970,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "417",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 120,
@@ -978,7 +978,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "624",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 121,
@@ -986,7 +986,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "951",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 122,
@@ -994,7 +994,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "286",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 123,
@@ -1002,7 +1002,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 2,
     code: "748",
-    status: "FRIEND",
+    status: "PETER ACUNO FAMILY",
   },
   {
     id: 124,
@@ -1010,7 +1010,7 @@ const people = [
     seatNumber: 0,
     numberOfGuests: 1,
     code: "539",
-    status: "FRIEND",
+    status: "GUEST",
   },
   {
     id: 125,
@@ -1019,6 +1019,22 @@ const people = [
     numberOfGuests: 1,
     code: "409",
     status: "LUIS APARTE FAMILY",
+  },
+  {
+    id: 126,
+    name: "JEPHUNNE SHEM RESABAL",
+    seatNumber: 0,
+    numberOfGuests: 1,
+    code: "632",
+    status: "GUEST",
+  },
+  {
+    id: 127,
+    name: "GUINEVERRE GUMAHAD",
+    seatNumber: 0,
+    numberOfGuests: 1,
+    code: "409",
+    status: "GUEST",
   },
 ];
 
